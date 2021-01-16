@@ -23,6 +23,7 @@ namespace IGMapManager
         public MainWindow()
         {
             InitializeComponent();
+            // TEST
         }
     }
 }
