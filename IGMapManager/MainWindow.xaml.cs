@@ -23,6 +23,8 @@ namespace IGMapManager
         public MainWindow()
         {
             InitializeComponent();
+            // Create database
+            DB.DatabaseSetup.createDatabase();
         }
 
         private void BtnZeus_Click(object sender, RoutedEventArgs e)
