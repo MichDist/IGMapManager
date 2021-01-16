@@ -23,9 +23,26 @@ namespace IGMapManager
         public MainWindow()
         {
             InitializeComponent();
-            // TEST
-            // TEST 2
-            // TEST 3
+        }
+
+        private void BtnZeus_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Frames.ZeusMainFrame());
+        }
+
+        private void BtnEmperor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnPharaoh_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Frames.PharaohMainFrame());
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

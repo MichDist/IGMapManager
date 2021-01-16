@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Projekte\IGMapManager\IGMapManager\App.xaml
-11151548125
+4-1955732454
 
-51609601847
-193582816078
-MainWindow.xaml;
+9-1445082870
+203-671450246
+Frames\PharaohMainFrame.xaml;Frames\ZeusMainFrame.xaml;Frames\Zeus\ZeusSaveGameFrame.xaml;MainWindow.xaml;
 
 False
 

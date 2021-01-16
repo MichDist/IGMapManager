@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IGMapManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1200" Width="1600">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Height="auto" Grid.Row="2" Width="auto" />
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Height="auto" Grid.Row="1" Width="auto" />
 
+        <WrapPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="BtnZeus" Height="80" Width="120" Click="BtnZeus_Click">Zeus/Poseidon</Button>
+            <Button x:Name="BtnPharaoh" Height="80" Width="120" Click="BtnPharaoh_Click">Pharaoh/Cleopatra</Button>
+            <Button x:Name="BtnEmperor" Height="80" Width="120" Click="BtnEmperor_Click">Emperor</Button>
+            <Button x:Name="BtnClose" Height="80" Width="120" Click="BtnClose_Click">Close</Button>
+        </WrapPanel>
+
+        <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="2" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

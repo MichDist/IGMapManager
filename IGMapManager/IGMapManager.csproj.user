@@ -7,6 +7,26 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Frames\PharaohMainFrame.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Frames\ZeusMainFrame.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Frames\Zeus\ZeusSaveGameFrame.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Frames\PharaohMainFrame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Frames\ZeusMainFrame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Frames\Zeus\ZeusSaveGameFrame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
