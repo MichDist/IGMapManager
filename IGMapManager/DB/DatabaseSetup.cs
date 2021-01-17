@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace IGMapManager.DB
 {
@@ -11,12 +12,15 @@ namespace IGMapManager.DB
     {
         public static Boolean createDatabase()
         {
-            var connection = new SQLiteConnection(@"Data Source=C:\Projekte\IGMapManager\map_db.db");
-            connection.Open();
+            if(!File.Exists("C:/Projekte/IGMapManager/map_db.db"))
+            {
+                var connection = new SQLiteConnection(@"Data Source=C:\Projekte\IGMapManager\map_db.db");
+                connection.Open();
 
-            createPathTable(connection);
+                createPathTable(connection);
 
-            connection.Close();
+                connection.Close();
+            }
 
             return true;
         }
