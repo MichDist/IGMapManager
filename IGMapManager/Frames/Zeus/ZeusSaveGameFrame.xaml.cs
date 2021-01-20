@@ -26,34 +26,35 @@ namespace IGMapManager.Frames.Zeus
         public ZeusSaveGameFrame()
         {
             InitializeComponent();
-            if(DB.ConfigSettings.getGameDirPath("Zeus") == "")
+
+            if(DB.ConfigSettings.getPath("Zeus", "No") == "")
             {
                 txtZeusGameDirPath.Text = "Set the game dir path!";
             }
             else
             {
-                txtZeusGameDirPath.Text = DB.ConfigSettings.getGameDirPath("Zeus");
+                txtZeusGameDirPath.Text = DB.ConfigSettings.getPath("Zeus", "No");
             }
-            if(DB.ConfigSettings.getRepoPath("Zeus") == "")
+            if(DB.ConfigSettings.getPath("Zeus", "Yes") == "")
             {
                 txtZeusRepoDirPath.Text = "Set Zeus repo path";
             }
             else
             {
-                txtZeusRepoDirPath.Text = DB.ConfigSettings.getRepoPath("Zeus");
+                txtZeusRepoDirPath.Text = DB.ConfigSettings.getPath("Zeus", "Yes");
             }
         }
 
         private void BtnZeusSaveSetPath_Click(object sender, RoutedEventArgs e)
         {
-            DB.ConfigSettings.setGameDirPath(txtZeusGameDirPath.Text, "Zeus");
-            txtZeusGameDirPath.Text = DB.ConfigSettings.getGameDirPath("Zeus");
+            DB.ConfigSettings.setPath(txtZeusGameDirPath.Text, "Zeus", "No");
+            txtZeusGameDirPath.Text = DB.ConfigSettings.getPath("Zeus", "No");
         }
 
         private void BtnZeusSaveSetRepoPath_Click(object sender, RoutedEventArgs e)
         {
-            DB.ConfigSettings.setRepoPath(txtZeusRepoDirPath.Text, "Zeus");
-            txtZeusRepoDirPath.Text = DB.ConfigSettings.getRepoPath("Zeus");
+            DB.ConfigSettings.setPath(txtZeusRepoDirPath.Text, "Zeus", "Yes");
+            txtZeusRepoDirPath.Text = DB.ConfigSettings.getPath("Zeus", "Yes");
         }
     }
 }
