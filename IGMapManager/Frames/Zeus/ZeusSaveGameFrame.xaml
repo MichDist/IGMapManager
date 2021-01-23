@@ -28,6 +28,10 @@
                 <Button x:Name="BtnZeusSaveSetRepoPath" Margin="10" Height="20" Width="90" Click="BtnZeusSaveSetRepoPath_Click">Set Repo Path</Button>
                 <TextBox x:Name="txtZeusRepoDirPath" Width="250" Margin="10"></TextBox>
             </WrapPanel>
+            <WrapPanel Grid.Column="0" Grid.Row="0">
+                <Button x:Name="BtnZeusSaveProfile" Margin="10" Height="20" Width="90" Click="BtnZeusSaveProfile_Click">Set Profile</Button>
+                <TextBox x:Name="txtZeusProfile" Width="250" Margin="10"></TextBox>
+            </WrapPanel>
         </StackPanel>
 
         <TabControl Grid.Column="2" Grid.RowSpan="2"></TabControl>

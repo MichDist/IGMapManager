@@ -56,5 +56,10 @@ namespace IGMapManager.Frames.Zeus
             DB.ConfigSettings.setPath(txtZeusRepoDirPath.Text, "Zeus", "Yes");
             txtZeusRepoDirPath.Text = DB.ConfigSettings.getPath("Zeus", "Yes");
         }
+
+        private void BtnZeusSaveProfile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
