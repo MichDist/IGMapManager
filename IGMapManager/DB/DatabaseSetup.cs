@@ -18,6 +18,7 @@ namespace IGMapManager.DB
                 connection.Open();
 
                 createPathTable(connection);
+                createProfileTable(connection);
 
                 connection.Close();
             }
@@ -29,6 +30,16 @@ namespace IGMapManager.DB
         {
             var command = new SQLiteCommand(pConnection);
             command.CommandText = "CREATE TABLE paths (game TEXT, path TEXT, repo TEXT)";
+            command.Prepare();
+            command.ExecuteNonQuery();
+
+            return true;
+        }
+
+        public static Boolean createProfileTable(SQLiteConnection pConnection)
+        {
+            var command = new SQLiteCommand(pConnection);
+            command.CommandText = "CREATE TABLE profiles (name TEXT)";
             command.Prepare();
             command.ExecuteNonQuery();
 

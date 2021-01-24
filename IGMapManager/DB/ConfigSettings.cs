@@ -78,5 +78,75 @@ namespace IGMapManager.DB
 
             return result;
         }
+
+        public static Boolean setProfile(string pProfileName)
+        {
+            //if (getPath(pGame, pRepo) == "")
+            //{
+            //    string str = @"Data Source=C:\Projekte\IGMapManager\map_db.db";
+            //    var connection = new SQLiteConnection(str);
+            //    connection.Open();
+
+            //    var command = new SQLiteCommand(connection);
+            //    command.CommandText = "INSERT INTO paths(game, path, repo) VALUES (@pGame, @pPath, @pRepo)";
+            //    command.Parameters.AddWithValue("@pGame", pGame);
+            //    command.Parameters.AddWithValue("@pPath", pPath);
+            //    command.Parameters.AddWithValue("@pRepo", pRepo);
+
+            //    command.Prepare();
+            //    command.ExecuteNonQuery();
+            //    connection.Close();
+            //}
+            //else
+            //{
+            //    updatePath(pPath, pGame, pRepo);
+            //}
+
+            return true;
+        }
+
+        public static Boolean updateProfile(string pProfileName)
+        {
+            //string str = @"Data Source=C:\Projekte\IGMapManager\map_db.db";
+            //var connection = new SQLiteConnection(str);
+            //connection.Open();
+
+            //var command = new SQLiteCommand(connection);
+            //command.CommandText = "UPDATE paths SET path = @pPath WHERE game = @pGame AND repo = @pRepo";
+            //command.Parameters.AddWithValue("@pPath", pPath);
+            //command.Parameters.AddWithValue("@pGame", pGame);
+            //command.Parameters.AddWithValue("@pRepo", pRepo);
+
+            //command.Prepare();
+            //command.ExecuteNonQuery();
+            //connection.Close();
+
+            return true;
+        }
+
+        public static string getProfile()
+        {
+            string str = @"Data Source=C:\Projekte\IGMapManager\map_db.db";
+            var connection = new SQLiteConnection(str);
+            connection.Open();
+
+            var command = new SQLiteCommand(connection);
+            command.CommandText = "SELECT name FROM profiles";
+            //command.Parameters.AddWithValue("@pGame", pGame);
+            //command.Parameters.AddWithValue("@pRepo", pRepo);
+            command.Prepare();
+
+            SQLiteDataReader reader = command.ExecuteReader();
+            string result = "";
+            // Read result                                  
+            while (reader.Read())
+            {
+                result = reader.GetString(0);
+            }
+            reader.Close();
+            connection.Close();
+
+            return result;
+        }
     }
 }
