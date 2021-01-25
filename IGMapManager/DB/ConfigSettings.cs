@@ -81,45 +81,41 @@ namespace IGMapManager.DB
 
         public static Boolean setProfile(string pProfileName)
         {
-            //if (getPath(pGame, pRepo) == "")
-            //{
-            //    string str = @"Data Source=C:\Projekte\IGMapManager\map_db.db";
-            //    var connection = new SQLiteConnection(str);
-            //    connection.Open();
+            if (getProfile() == "")
+            {
+                string str = @"Data Source=C:\Projekte\IGMapManager\map_db.db";
+                var connection = new SQLiteConnection(str);
+                connection.Open();
 
-            //    var command = new SQLiteCommand(connection);
-            //    command.CommandText = "INSERT INTO paths(game, path, repo) VALUES (@pGame, @pPath, @pRepo)";
-            //    command.Parameters.AddWithValue("@pGame", pGame);
-            //    command.Parameters.AddWithValue("@pPath", pPath);
-            //    command.Parameters.AddWithValue("@pRepo", pRepo);
+                var command = new SQLiteCommand(connection);
+                command.CommandText = "INSERT INTO profiles(name) VALUES (@pProfileName)";
+                command.Parameters.AddWithValue("@pProfileName", pProfileName);
 
-            //    command.Prepare();
-            //    command.ExecuteNonQuery();
-            //    connection.Close();
-            //}
-            //else
-            //{
-            //    updatePath(pPath, pGame, pRepo);
-            //}
+                command.Prepare();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            else
+            {
+                updateProfile(pProfileName);
+            }
 
             return true;
         }
 
         public static Boolean updateProfile(string pProfileName)
         {
-            //string str = @"Data Source=C:\Projekte\IGMapManager\map_db.db";
-            //var connection = new SQLiteConnection(str);
-            //connection.Open();
+            string str = @"Data Source=C:\Projekte\IGMapManager\map_db.db";
+            var connection = new SQLiteConnection(str);
+            connection.Open();
 
-            //var command = new SQLiteCommand(connection);
-            //command.CommandText = "UPDATE paths SET path = @pPath WHERE game = @pGame AND repo = @pRepo";
-            //command.Parameters.AddWithValue("@pPath", pPath);
-            //command.Parameters.AddWithValue("@pGame", pGame);
-            //command.Parameters.AddWithValue("@pRepo", pRepo);
+            var command = new SQLiteCommand(connection);
+            command.CommandText = "UPDATE profiles SET name = @pProfileName";
+            command.Parameters.AddWithValue("@pProfileName", pProfileName);
 
-            //command.Prepare();
-            //command.ExecuteNonQuery();
-            //connection.Close();
+            command.Prepare();
+            command.ExecuteNonQuery();
+            connection.Close();
 
             return true;
         }
@@ -132,8 +128,6 @@ namespace IGMapManager.DB
 
             var command = new SQLiteCommand(connection);
             command.CommandText = "SELECT name FROM profiles";
-            //command.Parameters.AddWithValue("@pGame", pGame);
-            //command.Parameters.AddWithValue("@pRepo", pRepo);
             command.Prepare();
 
             SQLiteDataReader reader = command.ExecuteReader();
